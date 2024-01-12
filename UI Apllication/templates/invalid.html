@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invalid</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+
+        }
+        .d1{
+            display: flex;
+            justify-content: center;
+            height: 400px;
+        }
+        h1{
+            
+            color:orangered;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        .submit{
+    background-color: #0e71ea;
+    border: 1px solid transparent;
+    border-radius: .75rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex: 0 0 auto;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    text-decoration: none #6B7280 solid;
+    text-decoration-thickness: auto;
+    transition-duration: .2s;
+    transition-property: background-color,border-color,color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+  }
+  
+  .submit:hover {
+    background-color: #2596be;
+  }
+  
+  .submit:focus {
+    box-shadow: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  
+  @media (min-width: 768px) {
+    .submit {
+      padding: .75rem 1.5rem;
+    }
+  }
+
+  .d2{
+    margin-top: 20px;
+  }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="d1">
+            <img src="..\static\oldpass.svg" alt="">
+    </div>
+    <div class="d2"><h1>** Invalid Credentials **</h1></div>
+    <div>
+
+        <a href="Login"><button class="submit">Try Again</button></a>
+
+    </div>
+
+</body>
+</html>

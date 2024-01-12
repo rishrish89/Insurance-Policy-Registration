@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="..\static\css\Homepage.css">
+</head>
+<body>
+    <div class="head1">
+    <p><b>QVY Insurance Online</b></p>
+    <p id="customer-homepage"><b>Customer Homepage</b></p>
+</div>
+<div class="bo1">
+    <div class="user-info">
+        <div><h2>Welcome, <i>{{name }}</i></h2> </div>
+
+        <a href="changePassword"><button class="cpb" >Change Password</button></a>
+        <a href="Login"><button class="logout-btn" >Logout</button></a>
+    </div>
+ 
+    <div class="options">
+        <a href="PolicySelect"><b>Choose Policy</b></a>
+        <span>|</span>
+        <a class="paint1" href="ViewPolicy"><b>View Your Policies</b></a>
+        <span>|</span>
+        <a href="delete"><b>Delete Policy</b></a>
+    </div>
+    <div class="image"><img src="..\static\HOME.svg" alt="Loading...."></div>
+
+</div>
+    <script>
+        function logout(){
+            window.location.href='Login.html'
+        }
+    </script>
+    
+ 
+</body>
+</html>
+<!-- {{ url_for('static', filename='HOME.svg') }} -->

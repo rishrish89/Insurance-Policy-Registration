@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia&family=Roboto:wght@300&display=swap');
+body {
+    font-family: Arial, sans-serif;
+   margin-top: 0px;
+    
+    background-color: #f8f9fa;
+}
+.bo1{
+
+
+    margin-left: 20px;
+    margin-right: 20px;
+}
+p {
+    text-align: center;
+    color: #0926ac;
+    margin: 0px;
+    border: 0cm;
+    font-size: 35px;
+    
+    /* padding-top: 10px; */
+}
+/* #customer-homepage{
+    color: #1b263b;
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin: 0px; */
+    /* padding-bottom: 10px;
+    padding-top: none; */
+
+
+.image{
+    display: flex;
+    justify-content: center;
+    height: 500px
+
+}
+
+.head1{
+    background-color: #a2d2ff;
+    height: 90px;
+    
+
+
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 10px;
+    padding: 10px; */
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+.options {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.options a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #3498db;
+}
+
+#customer-homepage {
+    text-align: center;
+    margin-top: 10px; 
+    color: #1b263b;
+    font-size: 25px;
+    
+}
+/* .paint1{
+ color:black;
+
+
+} */
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.cpb{
+    background-color: #2a9d8f;
+    margin-left: 850px;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+
+}

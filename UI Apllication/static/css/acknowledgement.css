@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    
+}
+h3{
+
+    font-size: 25px;
+}
+.div1{
+    color: rgb(119, 121, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+h1,h2{
+    color: #3498db;
+
+}
+p{
+    font-size: 20px;
+}
+
+.headings{
+    color: rgb(119, 121, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cpb{
+    background-color: #2a9d8f;
+    margin-left: 30px;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .headings {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+
+  .p2{
+    color: #3498db;
+    
+    font-size: 30px;
+    font-weight: bold;
+    margin: unset;
+
+
+  }
+
+.successmessage {
+    color:rgb(61, 105, 17);
+}
+
+.acknowledgement {
+ color: black;
+}

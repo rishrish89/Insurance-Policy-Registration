@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="..\static\css\Login.css">
+</head>
+
+<body>
+    <div class="headings">
+        <h1>QVY Insurance online</h1>
+    </div>
+    <form id="LoginForm"  action="{{ url_for('login_Validation') }}" onsubmit="return validateLoginForm()" name="loginForm" method="POST">
+        <div class="formdesign">
+            <label for="username">Username<span class="required-dot">*</span></label>
+            <div class="input-div">
+                <input type="text" placeholder = "Customer ID" id="username" name="username">
+                <p id="usernameError" class="error"></p>
+            </div>
+        </div>
+
+        
+        <div class="formdesign">
+            <label for="password">Password<span class="required-dot">*</span></label>
+            <div class="input-div">
+                <input type="password" placeholder="password" id="password" name="password" >
+                <p id="passwordError" class="error"></p>
+            </div>
+        </div>
+        <div class="button-div">
+            <input class="button" type="submit" value="Login">
+        </div>
+        
+        
+    </form>
+    <div class="div1"> 
+        <p class="p1">Not a Customer? </p>
+        <a href="/"><button class="cpb" >Register</button></a>
+    </div>
+    <div class="div1"> 
+        <p class="p1">For Admin </p>
+        <a href="admin"><button class="cpb" >Sign In</button></a>
+    </div>
+    <script src="..\static\js\Login.js"></script>
+</body>
+
+</html>

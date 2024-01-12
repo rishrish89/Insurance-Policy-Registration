@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Data</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+ 
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Policy Data</h1>
+    <form method="POST">
+        <label for="consumer_id">Enter Consumer ID:</label>
+        <input type="text" id="consumer_id" name="consumer_id" required>
+        <button type="submit">Submit</button>
+    </form>
+ 
+    <div id="pagination-buttons">
+        <button onclick="previousPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+    </div>
+ 
+    <table id="policy-table" border="1">
+        <thead>
+            <tr>
+                <th>Policy No</th>
+                <th>Commence Date</th>
+                <th>Status</th>
+                <th>Type</th>
+                <th>Policy Title</th>
+                <th>Premium Amount</th>
+                <th>Next Due Date</th>
+                <th>Sum Assured</th>
+                <th>Nominee Registered</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+ 
+    <script>
+        var rows = {% if rows %}{{ rows | tojson }}{% else %}[]{% endif %};
+        var currentPage = 1;
+        var rowsPerPage = 5;
+ 
+        function displayRows() {
+            var start = (currentPage - 1) * rowsPerPage;
+            var end = start + rowsPerPage;
+            var tableBody = document.getElementById('table-body');
+            tableBody.innerHTML = "";
+ 
+            for (var i = start; i < end && i < rows.length; i++) {
+                var row = rows[i];
+                var newRow = tableBody.insertRow();
+                for (var j = 0; j < row.length; j++) {
+                    // Skip Consumer ID and Policy Term columns
+                    if (j !== 1 && j !== 9) {
+                        var cell = newRow.insertCell();
+                        cell.innerHTML = row[j];
+                    }
+                }
+            }
+        }
+ 
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayRows();
+            }
+        }
+ 
+        function nextPage() {
+            var totalPages = Math.ceil(rows.length / rowsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayRows();
+            }
+        }
+ 
+        displayRows();
+    </script>
+</body>
+</html>

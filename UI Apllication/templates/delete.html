@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Policy</title>
+    <link rel="stylesheet" href="../static/css/ViewPolicy.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+}
+
+        .del{
+            background-color: #e7091ce1;
+            margin-left: 5px;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+
+        }
+        .p1{
+            font-size: larger;
+            font-family: Arial, Helvetica, sans-serif;
+            color: blueviolet;
+
+
+
+
+        }
+
+
+
+        .cpb{
+            background-color: #2a9d8f;
+    margin-left: 220px;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+        }
+
+        .div1{
+    display: flex;
+    flex-direction: row;
+}
+.c1{
+
+    width: 70%;
+
+}
+.b1{
+    width: 30%;
+}
+
+    </style>
+</head>
+ 
+<body>
+ 
+    <header>
+        <h1>QVY Insurance Online</h1>
+        <h2>Delete Policies</h2>
+    </header>
+<hr>
+    <div class="div1">
+    <form class="c1" method="POST" action="/delete_policy">
+        <label for="policyid">Policy ID:</label>
+        <input type="number" name="policyid" required>
+        
+            <input class="del" type="submit" value="Delete Policy">
+        
+        <!-- <input type="submit" value="Delete Policy"> -->
+    </form>
+    <a class="b1" href="home"><button class="cpb" >Back to Home</button></a></div>
+ 
+    {% if message %}
+        <p class="p1"><b>{{ message }}</b></p>
+    {% endif %}
+    
+
+
+    
+    
+ 
+</body>
+ 
+</html>

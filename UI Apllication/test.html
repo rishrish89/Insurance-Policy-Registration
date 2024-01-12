@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>HomePage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+ @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+ 
+
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: poppins;
+  
+}
+nav{
+  background: #0082e6;
+  height: 80px;
+  width: 100%;
+  
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  /* text-transform: uppercase; */
+}
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+
+
+#check{
+  display: none;
+}
+
+@media (min-width: 1000px){
+
+  label.logo{
+    display: none;
+  }
+
+  .user2{
+    display: none;
+  }
+
+}
+@media (min-width: 1200px){
+
+
+
+
+
+}
+
+
+@media (max-width: 1000px){
+  label.logo{
+    
+    font-size: 30px;
+    padding-left: 20px;
+  
+    
+
+
+  }
+
+  .logo img {
+      max-width: 100%;
+      height: auto;
+      max-height: 60px;
+      margin-top: 10px;
+    }
+  nav ul li a{
+    font-size: 16px;
+  }
+
+  .head1{
+    display: none;
+  }
+
+  .username{
+    display: none;
+  }
+
+
+
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+
+
+
+}
+
+
+/* @media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+} */
+
+.cpb{
+    background-color: #2a9d8f;
+   
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+
+
+}
+.logout-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    
+}
+
+.head1{
+    background-color: #a2d2ff;
+    height: 90px;
+    
+
+
+}
+
+#mh {
+    text-align: center;
+    color: #0926ac;
+    margin: 0px;
+    border: 0cm;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#customer-homepage {
+    text-align: center;
+    margin-top: 10px; 
+    color: #1b263b;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.image{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 500px
+
+}
+
+label.username{
+  color: white;
+  font-size: 20px;
+  line-height: 80px;
+  max-width: 50px;
+  
+  padding: 0 20px;
+  font-weight: bold;
+}
+
+nav1{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+
+sub{
+
+  font-size: 10px;
+}
+section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+
+    <div class="head1">
+      <p id="mh" ><b>QVY Insurance Online</b></p>
+      <p id="customer-homepage"><b>Customer Homepage</b></p>
+  </div>
+
+
+    <nav class="nav1">
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo"><img src=".\static\qvy.png" alt="Loading"></label>
+      <label class="username">Welcome,Manikantaaaaaaaaaaaaaaaa</label>
+      <ul>
+        <li><a class="user2" href="">Welcome,Manikanta</a></li>
+        <li><a href="#">Choose Policy</a></li>
+        <li><a href="#">View Your Policies</a></li>
+        <li><a href="#">Delete Policy</a></li>
+        <li><a class="active1" href="changePassword"><button class="cpb" >Change Password</button></a></li>
+        <li><a class="active1" href="Login"><button class="logout-btn" >Logout</button></a></li>
+        
+        
+      </ul>
+    </nav>
+    <section><p>Screen Width: <span id="screen-width">-</span> px</p>
+
+
+      <div class="image"><img src=".\static\HOME.svg" alt="Loading...."></div>
+
+    </section>
+
+    
+<script>
+  // Function to update screen width
+  function updateScreenWidth() {
+    const screenWidthElement = document.getElementById('screen-width');
+    screenWidthElement.textContent = window.innerWidth;
+  }
+
+  // Initial update
+  updateScreenWidth();
+
+  // Event listener for window resize
+  window.addEventListener('resize', updateScreenWidth);
+</script>
+  </body>
+</html>
+

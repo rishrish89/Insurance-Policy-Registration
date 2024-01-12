@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    background-color: #f8f9fa;
+}
+
+header {
+    color: #3498db;
+    padding: 10px;
+    text-align: center;
+}
+
+.div1{
+    display: flex;
+    flex-direction: row;
+}
+.c1{
+
+    width: 70%;
+
+}
+.b1{
+    width: 30%;
+}
+
+
+.cpb{
+    background-color: #2a9d8f;
+    margin-left: 200px;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+nav {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+#customer-id-input {
+    margin: 10px;
+}
+
+#submit-button {
+    padding: 10px;
+    background-color: gainsboro;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+label {
+    color: #3498db;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.policies {
+    color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.hide {
+    display: none;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    color: #fff;
+    background-color: #3498db;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #555;
+}
+button[type='submit']{
+    background-color: #2a9d8f; 
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+.class1{
+    background-color: #2a9d8f;
+    border-radius: 5px;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    
+}
+.class2{
+    background-color: #2a9d8f;
+    margin-left: 50px;
+    border-radius: 5px;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+#pagination-buttons{
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.d2{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.p1{
+    font-size: 20px;
+    font-weight: bold;
+    color: tomato;
+}
+
+

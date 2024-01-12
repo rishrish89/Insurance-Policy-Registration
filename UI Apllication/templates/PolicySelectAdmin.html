@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Selection</title>
+  <link rel="stylesheet" href="..\static\css\PolicySelect.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .d2{
+    margin-top: 20px;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+    label {
+      display: inline-block;
+      width: 100%;
+      /* Adjust the width as needed */
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="headings">
+    <h1>QVY Insurance online</h1>
+    <h2>Choose Policy</h2>
+  </div>
+  <div class="d1">
+    <div class="d2">
+      {% if message %}
+          <p class="p1">{{ message }}</p>
+      {% endif %}</div>
+    <form id="PolicySelect" onsubmit="return validateForm()" action="{{ url_for('adminPolicyaddition') }}" name="PolicySelect" method="POST">
+      
+      <label for="consumer_id"> Customer ID: </label>
+      <input type="number" id="consumer_id" name="consumer_id"  min="0" max="9999999" oninput="validateYear(this)" required>
+      
+      <label for="policyType">Policy Type:</label>
+      <select id="policyType" name="policyType" onchange="updatePolicyTitles()">
+        <option value="1">General Insurance</option>
+        <option value="2">Health Insurance</option>
+        <option value="3">Motor Insurance</option>
+
+      </select>
+
+      <br>
+
+      <!-- <label for="policyTitle">Policy Title:</label>
+        <select id="policyTitle" name="policyTitle">
+        </select> -->
+
+      <label for="policyTitle">Policy Title:</label>
+      <select id="policyTitle" name="policyTitle"></select>
+
+      <br>
+      <label for="nomineename">Nominee Name:</label>
+      <input type="text" id="nomineename" name="nomineename">
+      <br>
+
+      <label for="PolicyTerms">Policy Terms(Yrs):</label>
+      <input type="number" id="PolicyTerms" name="PolicyTerms" min="0" max="99" oninput="calculateResult()" required>
+
+      <label for="PremiumAmount">Premium Amount(Rs)</label>
+      <input type="number" id="PremiumAmount" name="PremiumAmount" oninput="calculateResult()" required>
+      <br>
+      <!-- <br>
+      <input type="button" value="Calculate Sum Assured" onclick=caculateSumAssured()>
+      <br> -->
+
+      <label for="policyType" class="sumAssured">Sum Assured(Rs)</label>
+      <input type="text" id="sumAssured" name="sumAssured" readonly required>
+      <br>
+      <div class="button-div">
+        <button id="sb" type="submit" value="Submit"  >Submit</button>
+
+      </div>
+    </form>
+    <a class="b1" href="Admin_home"><button class="cpb" >Back to Home</button></a></div>
+  </div>
+  <script>
+    function validateYear(input) {
+      if (input.value.length > 7) {
+        input.value = input.value.slice(0, 7); // Keep only the first digit
+      }
+    }
+
+
+    var names = ['BimaGold', 'Janand', 'TravelSafe Assurance', 'BusinessGuard Shield', 'Vridhdhi', 'Child Care', 'Family Wellness Plan', 'Senior Vitality Assurance', 'Mental Health Resilience', 'Personalized Wellness', 'Personal Injury Protection (PIP)', 'Roadside Assistance', 'Rental Reimbursement Policy', 'Floater', 'Conventional'];
+
+    function updatePolicyTitles() {
+      var policyType = document.getElementById('policyType');
+      var policyTitle = document.getElementById('policyTitle');
+
+      // Clear existing options
+      policyTitle.innerHTML = '';
+
+      // Add new options based on the selected policy type
+      var start = (policyType.value - 1) * 5;
+      var end = policyType.value * 5;
+
+      for (var i = start; i < end && i < names.length; i++) {
+        var option = document.createElement('option');
+        option.value = names[i];
+        option.text = names[i];
+        policyTitle.add(option);
+      }
+    }
+
+    updatePolicyTitles();
+
+
+    function caculateSumAssured() {
+      var premiumAmount = parseFloat(document.getElementById('PremiumAmount').value);
+      var years = parseInt(document.getElementById('PolicyTerms').value);
+
+      if (!isNaN(premiumAmount) && !isNaN(years)) {
+        var sumAssured = premiumAmount * years * 2;
+        console.log(sumAssured)
+        document.getElementById('sumAssured').value = sumAssured.toFixed(2);
+      } else {
+        alert('Please enter valid premium amount and number of years.');
+      }
+    }
+    function validateForm() {
+      var sum = document.getElementById('sumAssured');
+      if (sum.value ==="") {
+        alert('Sum Assured cannot be empty');
+        return false;
+      }
+
+     
+      return true;
+      
+      
+    }
+    function calculateResult() {
+    var term = document.getElementById('PolicyTerms').value;
+    var amount = document.getElementById('PremiumAmount').value;
+    var result = term * amount * 2;
+ 
+    document.getElementById('sumAssured').value = result;
+  }
+  </script>
+
+</body>
+
+</html>
